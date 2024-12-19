@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://djrv3628ck6ip"]
+
+[ext_resource type="PackedScene" uid="uid://bggctsc4c1whd" path="res://Scenes/Player/Scene_PlayerCat.tscn" id="1_p8xw3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8rvxt"]
+size = Vector2(481, 47.25)
+
+[node name="Scene_LevelTutorial" type="Node"]
+
+[node name="ScenePlayerCat" parent="." instance=ExtResource("1_p8xw3")]
+position = Vector2(200, 850)
+
+[node name="Floor" type="StaticBody2D" parent="."]
+position = Vector2(0, 992)
+
+[node name="ColorRect" type="ColorRect" parent="Floor"]
+offset_right = 1922.0
+offset_bottom = 197.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(959, 98.5)
+scale = Vector2(4, 4)
+shape = SubResource("RectangleShape2D_8rvxt")

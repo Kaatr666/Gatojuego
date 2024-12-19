@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cr5xcalifoqnk"]
+
+[ext_resource type="Script" path="res://Scenes/Projectiles/projectile_dust.gd" id="1_fm6o7"]
+[ext_resource type="Texture2D" uid="uid://b8oqf7v8hr8a1" path="res://Sprites/Placeholders/Placeholder_polvo.png" id="1_lujjl"]
+[ext_resource type="PackedScene" uid="uid://bgq1qldxak3o8" path="res://Scenes/Components/hitbox.tscn" id="2_6pim5"]
+[ext_resource type="PackedScene" uid="uid://dveib51iy6vcv" path="res://Scenes/Components/hurtbox.tscn" id="3_wl3o7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i6hq0"]
+radius = 101.178
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_58qpj"]
+radius = 65.0
+
+[node name="Projectile_dust" type="RigidBody2D"]
+script = ExtResource("1_fm6o7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_lujjl")
+
+[node name="Hitbox" parent="." instance=ExtResource("2_6pim5")]
+collision_layer = 32
+collision_mask = 2
+monitoring = false
+
+[node name="HitboxCollision" parent="Hitbox" index="0"]
+shape = SubResource("CircleShape2D_i6hq0")
+debug_color = Color(0.952941, 0.176471, 0.321569, 0.419608)
+
+[node name="Hurtbox" parent="." instance=ExtResource("3_wl3o7")]
+collision_layer = 32
+collision_mask = 4
+monitorable = false
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+shape = SubResource("CircleShape2D_58qpj")
+debug_color = Color(0.352941, 0.615686, 0.203922, 0.419608)
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]
+
+[editable path="Hitbox"]
+[editable path="Hurtbox"]

@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://bgq1qldxak3o8"]
+
+[node name="Hitbox" type="Area2D"]
+
+[node name="HitboxCollision" type="CollisionShape2D" parent="."]

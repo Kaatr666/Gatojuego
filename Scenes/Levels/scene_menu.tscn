@@ -1,0 +1,211 @@
+[gd_scene load_steps=25 format=3 uid="uid://vcoe2c13dt04"]
+
+[ext_resource type="Texture2D" uid="uid://34uf102hxci6" path="res://Sprites/Placeholders/TitleScreen/Placeholder_title.png" id="1_hhheg"]
+[ext_resource type="Script" path="res://Scenes/Levels/scene_menu.gd" id="1_ixtj7"]
+[ext_resource type="Texture2D" uid="uid://0mrd03c8wsyl" path="res://Sprites/Placeholders/TitleScreen/Placeholder_Play.png" id="2_foijv"]
+[ext_resource type="Texture2D" uid="uid://hrjeuqvkxnk7" path="res://Sprites/Placeholders/TitleScreen/Placeholder_PlayPressed.png" id="3_tk3ef"]
+[ext_resource type="Texture2D" uid="uid://b7jb0a3syvrwv" path="res://Sprites/Placeholders/TitleScreen/Placeholder_PlaySelected.png" id="4_n3dgd"]
+[ext_resource type="Texture2D" uid="uid://b23ytu4sl6o20" path="res://Sprites/Placeholders/TitleScreen/Placeholder_Settings.png" id="5_qwaut"]
+[ext_resource type="Texture2D" uid="uid://c2g4wkd25vu7q" path="res://Sprites/Placeholders/TitleScreen/Placeholder_SettingsPressed.png" id="6_xcbr3"]
+[ext_resource type="Texture2D" uid="uid://durnk1x4dm5g2" path="res://Sprites/Placeholders/TitleScreen/Placeholder_SettingsSelected.png" id="7_s7t5h"]
+[ext_resource type="Texture2D" uid="uid://d0pbbtnvh1sm5" path="res://Sprites/Placeholders/TitleScreen/Placeholder_Quit.png" id="8_j8ep5"]
+[ext_resource type="Texture2D" uid="uid://bwcsgbcvxop60" path="res://Sprites/Placeholders/TitleScreen/Placeholder_QuitPressed.png" id="9_ecnhx"]
+[ext_resource type="Texture2D" uid="uid://c4xpo2l1mq4iy" path="res://Sprites/Placeholders/TitleScreen/Placeholder_QuitSelected.png" id="10_gmasx"]
+[ext_resource type="Texture2D" uid="uid://cxfp3l0n08q1a" path="res://Sprites/Placeholders/TitleScreen/Placeholder_Rush.png" id="12_qccsa"]
+[ext_resource type="Texture2D" uid="uid://sbruvvdaum5p" path="res://Sprites/Placeholders/TitleScreen/Placeholder_RushPressed.png" id="13_2xa2r"]
+[ext_resource type="Texture2D" uid="uid://cg2cxgcycnusk" path="res://Sprites/Placeholders/TitleScreen/Placeholder_RushSelected.png" id="14_wj5d5"]
+[ext_resource type="Texture2D" uid="uid://sjfmwevwkscg" path="res://Sprites/Placeholders/TitleScreen/Placeholder_Tutorial.png" id="15_jxjel"]
+[ext_resource type="Texture2D" uid="uid://b2gisjicphh6l" path="res://Sprites/Placeholders/TitleScreen/Placeholder_TutorialPressed.png" id="16_7hbo5"]
+[ext_resource type="Texture2D" uid="uid://dcq11yoffpbkr" path="res://Sprites/Placeholders/TitleScreen/Placeholder_TutorialSelected.png" id="17_vh1sx"]
+[ext_resource type="Texture2D" uid="uid://cr8f6w4j2uo2v" path="res://Sprites/Menus/MainMenu/BG.png" id="18_vwaq1"]
+[ext_resource type="AudioStream" uid="uid://cov66148waugk" path="res://Sound/SFX/menu sound 1.wav" id="19_yq6ph"]
+[ext_resource type="AudioStream" uid="uid://djk5poubbp5gy" path="res://Sound/SFX/menu sound 2.wav" id="20_k86yk"]
+
+[sub_resource type="Animation" id="Animation_hcqos"]
+resource_name = "Play-Menu"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayMenuContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainMenuContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, -1080), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jlovs"]
+resource_name = "PlayEnter"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainMenuContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayMenuContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1080), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0ighs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayMenuContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainMenuContainer:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n77o1"]
+_data = {
+"Play-Menu": SubResource("Animation_hcqos"),
+"PlayEnter": SubResource("Animation_jlovs"),
+"RESET": SubResource("Animation_0ighs")
+}
+
+[node name="Scene_Menu" type="Node"]
+script = ExtResource("1_ixtj7")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="MainMenuContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="MainMenuSet" type="VBoxContainer" parent="CanvasLayer/MainMenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Title" type="TextureRect" parent="CanvasLayer/MainMenuContainer/MainMenuSet"]
+layout_mode = 2
+texture = ExtResource("1_hhheg")
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/MainMenuContainer/MainMenuSet"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("2_foijv")
+texture_pressed = ExtResource("3_tk3ef")
+texture_hover = ExtResource("4_n3dgd")
+texture_disabled = ExtResource("2_foijv")
+texture_focused = ExtResource("4_n3dgd")
+
+[node name="SettingsButton" type="TextureButton" parent="CanvasLayer/MainMenuContainer/MainMenuSet"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("5_qwaut")
+texture_pressed = ExtResource("6_xcbr3")
+texture_hover = ExtResource("7_s7t5h")
+texture_disabled = ExtResource("5_qwaut")
+texture_focused = ExtResource("7_s7t5h")
+
+[node name="QuitButton" type="TextureButton" parent="CanvasLayer/MainMenuContainer/MainMenuSet"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture_normal = ExtResource("8_j8ep5")
+texture_pressed = ExtResource("9_ecnhx")
+texture_hover = ExtResource("10_gmasx")
+texture_disabled = ExtResource("8_j8ep5")
+texture_focused = ExtResource("10_gmasx")
+
+[node name="PlayMenuContainer" type="AspectRatioContainer" parent="CanvasLayer"]
+offset_top = 1080.0
+offset_right = 1920.0
+offset_bottom = 2160.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PlayMenuContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="RushButton" type="TextureButton" parent="CanvasLayer/PlayMenuContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("12_qccsa")
+texture_pressed = ExtResource("13_2xa2r")
+texture_hover = ExtResource("14_wj5d5")
+texture_disabled = ExtResource("12_qccsa")
+texture_focused = ExtResource("14_wj5d5")
+
+[node name="TutorialButton" type="TextureButton" parent="CanvasLayer/PlayMenuContainer/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("15_jxjel")
+texture_pressed = ExtResource("16_7hbo5")
+texture_hover = ExtResource("17_vh1sx")
+texture_disabled = ExtResource("15_jxjel")
+texture_focused = ExtResource("17_vh1sx")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_mirroring = Vector2(2000, 1200)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("18_vwaq1")
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_n77o1")
+}
+
+[node name="ConfimSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19_yq6ph")
+
+[node name="QuitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_k86yk")
+
+[connection signal="pressed" from="CanvasLayer/MainMenuContainer/MainMenuSet/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenuContainer/MainMenuSet/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PlayMenuContainer/VBoxContainer/RushButton" to="." method="_on_rush_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PlayMenuContainer/VBoxContainer/TutorialButton" to="." method="_on_tutorial_button_pressed"]
+[connection signal="animation_finished" from="CanvasLayer/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="finished" from="QuitSound" to="." method="_on_quit_sound_finished"]

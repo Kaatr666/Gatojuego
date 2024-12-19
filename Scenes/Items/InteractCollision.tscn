@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dmxo3d0ccdg0d"]
+
+[node name="InteractCollision" type="Area2D"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

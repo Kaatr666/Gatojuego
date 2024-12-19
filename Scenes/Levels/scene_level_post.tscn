@@ -1,0 +1,265 @@
+[gd_scene load_steps=16 format=3 uid="uid://cyr7s7besy88a"]
+
+[ext_resource type="PackedScene" uid="uid://bggctsc4c1whd" path="res://Scenes/Player/Scene_PlayerCat.tscn" id="1_kepax"]
+[ext_resource type="PackedScene" uid="uid://bgq1qldxak3o8" path="res://Scenes/Components/hitbox.tscn" id="2_vdkbx"]
+[ext_resource type="PackedScene" uid="uid://dveib51iy6vcv" path="res://Scenes/Components/hurtbox.tscn" id="3_kl5fu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2rkov"]
+size = Vector2(1521, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wc8xe"]
+size = Vector2(1021, 25)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fn4ui"]
+size = Vector2(727, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sjp8j"]
+size = Vector2(693, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_num6f"]
+size = Vector2(1091, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rion"]
+size = Vector2(2412, 110)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7iqso"]
+size = Vector2(2410, 161)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6f52u"]
+radius = 481.234
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_us3ct"]
+radius = 76.4853
+
+[sub_resource type="Animation" id="Animation_ndyum"]
+resource_name = "Intro"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Camera2D:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Camera2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 981), Vector2(1445, 1248)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../ScenePlayerCat:cinematicPlaying")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ivaq4"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Camera2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 981)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f5w77"]
+_data = {
+"Intro": SubResource("Animation_ndyum"),
+"RESET": SubResource("Animation_ivaq4")
+}
+
+[node name="SceneLevelPost" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 981)
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="BGPost1" type="Node2D" parent="Level"]
+position = Vector2(1250, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Level/BGPost1"]
+offset_left = -42.0
+offset_right = 40.0
+offset_bottom = 1918.0
+color = Color(0.976471, 0.976471, 0.807843, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="BGPost2" type="Node2D" parent="Level"]
+position = Vector2(2250, 0)
+
+[node name="ColorRect" type="ColorRect" parent="Level/BGPost2"]
+offset_left = -42.0
+offset_right = 40.0
+offset_bottom = 1918.0
+color = Color(0.976471, 0.976471, 0.807843, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Floor3" type="StaticBody2D" parent="Level"]
+position = Vector2(800, 900)
+
+[node name="ColorRect" type="ColorRect" parent="Level/Floor3"]
+offset_right = 1523.0
+offset_bottom = 85.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Floor3"]
+position = Vector2(761.5, 13.5)
+shape = SubResource("RectangleShape2D_2rkov")
+one_way_collision = true
+
+[node name="Floor2" type="StaticBody2D" parent="Level"]
+position = Vector2(1600, 1200)
+
+[node name="ColorRect" type="ColorRect" parent="Level/Floor2"]
+offset_right = 1021.0
+offset_bottom = 73.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Floor2"]
+position = Vector2(511.5, 12.5)
+shape = SubResource("RectangleShape2D_wc8xe")
+one_way_collision = true
+
+[node name="Floor4" type="StaticBody2D" parent="Level"]
+position = Vector2(1600, 650)
+
+[node name="ColorRect" type="ColorRect" parent="Level/Floor4"]
+offset_right = 726.0
+offset_bottom = 73.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Floor4"]
+position = Vector2(362.5, 14.5)
+shape = SubResource("RectangleShape2D_fn4ui")
+one_way_collision = true
+
+[node name="Floor5" type="StaticBody2D" parent="Level"]
+position = Vector2(900, 300)
+
+[node name="ColorRect" type="ColorRect" parent="Level/Floor5"]
+offset_right = 691.0
+offset_bottom = 73.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Floor5"]
+position = Vector2(345.5, 20)
+shape = SubResource("RectangleShape2D_sjp8j")
+one_way_collision = true
+
+[node name="Floor1" type="StaticBody2D" parent="Level"]
+position = Vector2(700, 1500)
+
+[node name="ColorRect" type="ColorRect" parent="Level/Floor1"]
+offset_right = 1090.0
+offset_bottom = 70.0
+metadata/_edit_use_anchors_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Floor1"]
+position = Vector2(545.5, 19)
+shape = SubResource("RectangleShape2D_num6f")
+one_way_collision = true
+
+[node name="ScenePlayerCat" parent="." instance=ExtResource("1_kepax")]
+position = Vector2(1450, 1350)
+cinematicPlaying = true
+
+[node name="VaccumBoss" type="CharacterBody2D" parent="."]
+position = Vector2(350, 750)
+collision_layer = 16
+collision_mask = 0
+
+[node name="ColorRect" type="ColorRect" parent="VaccumBoss"]
+offset_right = 2403.0
+offset_bottom = 111.0
+color = Color(0.345098, 0.345098, 0.345098, 1)
+
+[node name="Hitbox" parent="VaccumBoss" instance=ExtResource("2_vdkbx")]
+collision_layer = 16
+collision_mask = 2
+monitoring = false
+
+[node name="HitboxCollision" parent="VaccumBoss/Hitbox" index="0"]
+position = Vector2(1196, 56)
+shape = SubResource("RectangleShape2D_0rion")
+debug_color = Color(0.894118, 0.309804, 0.184314, 0.419608)
+
+[node name="Hurtbox" parent="VaccumBoss" instance=ExtResource("3_kl5fu")]
+collision_layer = 16
+collision_mask = 44
+monitorable = false
+
+[node name="CollisionShape2D" parent="VaccumBoss/Hurtbox" index="0"]
+position = Vector2(1195, 57.5)
+shape = SubResource("RectangleShape2D_7iqso")
+debug_color = Color(0.603922, 0.541176, 0.141176, 0.419608)
+
+[node name="VaccumingBox" type="Area2D" parent="VaccumBoss"]
+position = Vector2(2300, 50)
+collision_layer = 16
+collision_mask = 40
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VaccumBoss/VaccumingBox"]
+shape = SubResource("CircleShape2D_6f52u")
+debug_color = Color(0.105882, 0.635294, 0.368627, 0.419608)
+
+[node name="DoubledamageBox" type="Area2D" parent="VaccumBoss"]
+position = Vector2(2300, 50)
+collision_layer = 16
+collision_mask = 40
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VaccumBoss/DoubledamageBox"]
+shape = SubResource("CircleShape2D_us3ct")
+debug_color = Color(0.917647, 0.262745, 0.301961, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="VaccumBoss"]
+libraries = {
+"": SubResource("AnimationLibrary_f5w77")
+}
+autoplay = "Intro"
+
+[node name="Marker01" type="Marker2D" parent="."]
+position = Vector2(350, 100)
+
+[node name="Marker02" type="Marker2D" parent="."]
+position = Vector2(350, 450)
+
+[node name="Marker03" type="Marker2D" parent="."]
+position = Vector2(350, 750)
+
+[node name="Marker04" type="Marker2D" parent="."]
+position = Vector2(350, 1000)
+
+[node name="Marker05" type="Marker2D" parent="."]
+position = Vector2(350, 1350)
+
+[node name="Marker06" type="Marker2D" parent="."]
+position = Vector2(100, 3000)
+
+[editable path="VaccumBoss/Hitbox"]
+[editable path="VaccumBoss/Hurtbox"]
